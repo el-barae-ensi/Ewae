@@ -1,0 +1,201 @@
+version: '3.8'
+
+services:
+  # Database
+  mysql:
+    image: mysql:8.0
+    container_name: ewae-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: ewae_db
+      MYSQL_USER: ewae_user
+      MYSQL_PASSWORD: ewae_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+  # Redis for caching and sessions
+  redis:
+    image: redis:7-alpine
+    container_name: ewae-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+  # Spring Boot Service 1 - User Management
+  springboot-service1:
+    build:
+      context: ../backend/springboot-service1
+      dockerfile: Dockerfile
+    container_name: ewae-service1
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: ewae_db
+      DB_USER: ewae_user
+      DB_PASSWORD: ewae_password
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+  # .NET Service 1 (iwaa)
+  dotnet-service1:
+    build:
+      context: ../backend/iwaa
+      dockerfile: Dockerfile
+    container_name: ewae-dotnet-service1
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+      ConnectionStrings__DefaultConnection: "Server=mysql;Port=3306;Database=ewae_db;Uid=ewae_user;Pwd=ewae_password;"
+      Redis__Connection: "redis:6379"
+    ports:
+      - "5000:80"
+      - "5001:443"
+    depends_on:
+      - mysql
+      - redis
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+  # Frontend React App
+  frontend:
+    build:
+      context: ../frontend/my-app
+      dockerfile: Dockerfile
+    container_name: ewae-frontend
+    environment:
+      REACT_APP_API_BASE_URL: http://localhost:8080
+      REACT_APP_SERVICE1_URL: http://localhost:8081
+      REACT_APP_DOTNET_SERVICE_URL: http://localhost:5000
+    ports:
+      - "3000:3000"
+    volumes:
+      - ../frontend/my-app/src:/app/src
+      - ../frontend/my-app/public:/app/public
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+  # API Gateway (Nginx)
+  api-gateway:
+    image: nginx:alpine
+    container_name: ewae-gateway
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - springboot-service1
+      - dotnet-service1
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+  # Monitoring - Prometheus
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: ewae-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+  # Monitoring - Grafana
+  grafana:
+    image: grafana/grafana:latest
+    container_name: ewae-grafana
+    ports:
+      - "3001:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    depends_on:
+      - prometheus
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+  # Log aggregation - ELK Stack (Elasticsearch)
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.8.0
+    container_name: ewae-elasticsearch
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+  # Log aggregation - Kibana
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.8.0
+    container_name: ewae-kibana
+    ports:
+      - "5601:5601"
+    environment:
+      ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+  # Message Broker - RabbitMQ
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: ewae-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ewae
+      RABBITMQ_DEFAULT_PASS: ewae_password
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - ewae-network
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+  elasticsearch_data:
+  rabbitmq_data:
+
+networks:
+  ewae-network:
+    driver: bridge

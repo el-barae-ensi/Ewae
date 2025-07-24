@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\iwaa.props" />
+  <Import Project="../build/iwaa.props" />
 </Project>

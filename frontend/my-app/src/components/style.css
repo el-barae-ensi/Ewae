@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 :root {
   --green-dark: #094c3b;
   --green-light: #9ed7cc;
@@ -18,9 +19,30 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+=======
+/* Authentication Page Styles */
+.authontification {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+>>>>>>> Stashed changes
 }
 
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Auth Card */
 .auth-card {
+<<<<<<< Updated upstream
   background-color: var(--white);
   border-radius: 20px;
   padding: 60px 50px;
@@ -104,3 +126,433 @@ body {
   font-size: 18px;
   color: var(--green-dark);
 }
+=======
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Auth Header */
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.auth-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.login-subtitle {
+    color: #6c757d;
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Form Styles */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #fff;
+    color: #495057;
+}
+
+.input-field input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.input-field input:disabled {
+    background-color: #f8f9fa;
+    opacity: 0.7;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    color: #6c757d;
+    font-size: 1.125rem;
+    z-index: 1;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: #495057;
+    background-color: #f8f9fa;
+}
+
+.password-toggle:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #3498db;
+}
+
+.forgot-password-link {
+    background: none;
+    border: none;
+    color: #3498db;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.forgot-password-link:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* Alert Styles */
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert i {
+    font-size: 1rem;
+}
+
+/* Login Button */
+.login-button {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.login-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+}
+
+.login-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.login-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Demo Section */
+.demo-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+}
+
+.demo-divider {
+    position: relative;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.demo-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e9ecef;
+}
+
+.demo-divider span {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0 1rem;
+    color: #6c757d;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.demo-accounts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.demo-account-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.demo-account-btn:hover:not(:disabled) {
+    background: #e9ecef;
+    border-color: #dee2e6;
+    transform: translateY(-1px);
+}
+
+.demo-account-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.demo-account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.demo-username {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.demo-role {
+    color: #6c757d;
+    font-size: 0.8rem;
+}
+
+.demo-note {
+    font-size: 0.8rem;
+    color: #6c757d;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 1rem;
+    background: #e3f2fd;
+    border-radius: 8px;
+    border-left: 3px solid #2196f3;
+}
+
+/* Auth Footer */
+.auth-footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.auth-footer p {
+    margin: 0 0 1rem 0;
+    font-size: 0.85rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .authontification {
+        padding: 1rem;
+    }
+
+    .auth-card {
+        padding: 2rem;
+    }
+
+    .login-title {
+        font-size: 1.75rem;
+    }
+
+    .footer-links {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .input-field input {
+        padding: 0.875rem 0.875rem 0.875rem 2.75rem;
+    }
+
+    .input-icon {
+        left: 0.875rem;
+    }
+
+    .password-toggle {
+        right: 0.875rem;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+}
+
+/* Loading Spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.125rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus styles for accessibility */
+.login-button:focus,
+.demo-account-btn:focus,
+.password-toggle:focus,
+.forgot-password-link:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+input:focus {
+    outline: none;
+}
+>>>>>>> Stashed changes

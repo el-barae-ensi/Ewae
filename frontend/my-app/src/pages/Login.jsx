@@ -1,5 +1,4 @@
-import React from 'react';
-import { Authontification } from '../components/Authontification';
+import { Authontification } from "../components/Authontification";
 
 function Login() {
   return (

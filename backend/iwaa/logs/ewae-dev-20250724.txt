@@ -1,0 +1,161 @@
+[2025-07-24 20:05:43.137 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:05:58.168 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:05:58.811 +01:00 ERR] Microsoft.EntityFrameworkCore.Database.Command: Failed executing DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE `Associations` (
+    `Id` int NOT NULL AUTO_INCREMENT,
+    `Name` varchar(200) CHARACTER SET utf8mb4 NOT NULL,
+    `Type` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+    `Status` int NOT NULL,
+    `Region` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+    `Address` varchar(500) CHARACTER SET utf8mb4 NOT NULL,
+    `Phone` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
+    `Email` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+    `President` varchar(100) CHARACTER SET utf8mb4 NOT NULL,
+    `FoundedDate` datetime(6) NOT NULL,
+    `Members` int NOT NULL,
+    `Budget` decimal(18,2) NOT NULL,
+    `Projects` longtext CHARACTER SET utf8mb4 NULL,
+    `LastInspection` datetime(6) NULL,
+    `InspectionStatus` varchar(200) CHARACTER SET utf8mb4 NULL,
+    `RiskLevel` int NOT NULL,
+    `CreatedAt` datetime(6) NOT NULL DEFAULT GETUTCDATE(),
+    `UpdatedAt` datetime(6) NULL,
+    `CreatedById` varchar(450) CHARACTER SET utf8mb4 NULL,
+    `Notes` longtext CHARACTER SET utf8mb4 NULL,
+    `LegalRegistrationNumber` longtext CHARACTER SET utf8mb4 NULL,
+    `LegalRegistrationDate` datetime(6) NULL,
+    `BankAccountNumber` longtext CHARACTER SET utf8mb4 NULL,
+    `WebsiteUrl` longtext CHARACTER SET utf8mb4 NULL,
+    `SocialMediaLinks` longtext CHARACTER SET utf8mb4 NULL,
+    `IsActive` tinyint(1) NOT NULL,
+    CONSTRAINT `PK_Associations` PRIMARY KEY (`Id`),
+    CONSTRAINT `FK_Associations_AspNetUsers_CreatedById` FOREIGN KEY (`CreatedById`) REFERENCES `AspNetUsers` (`Id`) ON DELETE SET NULL
+) CHARACTER SET=utf8mb4;
+[2025-07-24 20:06:53.455 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:07:01.737 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:07:14.925 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:07:15.304 +01:00 ERR] Microsoft.EntityFrameworkCore.Database.Command: Failed executing DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE TABLE `AspNetRoles` (
+    `Id` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+    `Name` varchar(256) CHARACTER SET utf8mb4 NULL,
+    `NormalizedName` varchar(256) CHARACTER SET utf8mb4 NULL,
+    `ConcurrencyStamp` longtext CHARACTER SET utf8mb4 NULL,
+    CONSTRAINT `PK_AspNetRoles` PRIMARY KEY (`Id`)
+) CHARACTER SET=utf8mb4;
+[2025-07-24 20:08:01.773 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:09:54.880 +01:00 INF] : Checking for pending database migrations...
+[2025-07-24 20:09:55.351 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:09:55.628 +01:00 INF] : Database migration completed successfully.
+[2025-07-24 20:09:55.902 +01:00 INF] : Created role: AgentSecurite
+[2025-07-24 20:09:55.912 +01:00 INF] : Created role: GroupeAssociatif
+[2025-07-24 20:09:55.916 +01:00 INF] : Created role: Public
+[2025-07-24 20:09:55.922 +01:00 INF] : Created role: GestionPersona
+[2025-07-24 20:09:55.928 +01:00 INF] : Created role: Twaa
+[2025-07-24 20:09:55.946 +01:00 WRN] : Failed to create demo user agent: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:09:55.948 +01:00 WRN] : Failed to create demo user associative: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:09:55.949 +01:00 WRN] : Failed to create demo user public: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:09:55.950 +01:00 WRN] : Failed to create demo user persona: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:09:55.952 +01:00 WRN] : Failed to create demo user twaa: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:09:55.953 +01:00 INF] : Initial data seeding completed successfully
+[2025-07-24 20:09:55.954 +01:00 INF] : Ewae API application started successfully
+[2025-07-24 20:09:55.967 +01:00 WRN] Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager: No XML encryptor configured. Key {330a44de-9ff9-4e07-a178-558632554f41} may be persisted to storage in unencrypted form.
+[2025-07-24 20:09:56.015 +01:00 INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5139
+[2025-07-24 20:09:56.016 +01:00 INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+[2025-07-24 20:09:56.016 +01:00 INF] Microsoft.Hosting.Lifetime: Hosting environment: Development
+[2025-07-24 20:09:56.016 +01:00 INF] Microsoft.Hosting.Lifetime: Content root path: /home/yasser-zbook/Projects/Ewae/backend/iwaa
+[2025-07-24 20:10:03.104 +01:00 INF] Microsoft.Hosting.Lifetime: Application is shutting down...
+[2025-07-24 20:10:26.477 +01:00 INF] : Checking for pending database migrations...
+[2025-07-24 20:10:26.950 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:10:27.223 +01:00 INF] : Database migration completed successfully.
+[2025-07-24 20:10:27.450 +01:00 WRN] : Failed to create demo user agent: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:10:27.453 +01:00 WRN] : Failed to create demo user associative: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:10:27.454 +01:00 WRN] : Failed to create demo user public: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:10:27.454 +01:00 WRN] : Failed to create demo user persona: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:10:27.455 +01:00 WRN] : Failed to create demo user twaa: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:10:27.455 +01:00 INF] : Initial data seeding completed successfully
+[2025-07-24 20:10:27.457 +01:00 INF] : Ewae API application started successfully
+[2025-07-24 20:10:27.540 +01:00 WRN] Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer: The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+[2025-07-24 20:10:27.547 +01:00 INF] Microsoft.Hosting.Lifetime: Now listening on: https://localhost:7219
+[2025-07-24 20:10:27.547 +01:00 INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5139
+[2025-07-24 20:10:27.548 +01:00 INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+[2025-07-24 20:10:27.549 +01:00 INF] Microsoft.Hosting.Lifetime: Hosting environment: Development
+[2025-07-24 20:10:27.549 +01:00 INF] Microsoft.Hosting.Lifetime: Content root path: /home/yasser-zbook/Projects/Ewae/backend/iwaa
+[2025-07-24 20:10:39.710 +01:00 INF] Microsoft.Hosting.Lifetime: Application is shutting down...
+[2025-07-24 20:12:58.270 +01:00 INF] : Checking for pending database migrations...
+[2025-07-24 20:12:58.740 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:12:59.010 +01:00 INF] : Database migration completed successfully.
+[2025-07-24 20:12:59.238 +01:00 WRN] : Failed to create demo user agent: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:12:59.240 +01:00 WRN] : Failed to create demo user associative: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:12:59.241 +01:00 WRN] : Failed to create demo user public: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:12:59.242 +01:00 WRN] : Failed to create demo user persona: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:12:59.242 +01:00 WRN] : Failed to create demo user twaa: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:12:59.242 +01:00 INF] : Initial data seeding completed successfully
+[2025-07-24 20:12:59.243 +01:00 INF] : Ewae API application started successfully
+[2025-07-24 20:12:59.320 +01:00 WRN] Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer: The ASP.NET Core developer certificate is not trusted. For information about trusting the ASP.NET Core developer certificate, see https://aka.ms/aspnet/https-trust-dev-cert.
+[2025-07-24 20:12:59.326 +01:00 INF] Microsoft.Hosting.Lifetime: Now listening on: https://localhost:7219
+[2025-07-24 20:12:59.326 +01:00 INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5139
+[2025-07-24 20:12:59.327 +01:00 INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+[2025-07-24 20:12:59.327 +01:00 INF] Microsoft.Hosting.Lifetime: Hosting environment: Development
+[2025-07-24 20:12:59.327 +01:00 INF] Microsoft.Hosting.Lifetime: Content root path: /home/yasser-zbook/Projects/Ewae/backend/iwaa
+[2025-07-24 20:14:21.005 +01:00 INF] : Checking for pending database migrations...
+[2025-07-24 20:14:21.476 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:14:21.748 +01:00 INF] : Database migration completed successfully.
+[2025-07-24 20:14:21.996 +01:00 WRN] : Failed to create demo user agent: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:14:21.998 +01:00 WRN] : Failed to create demo user associative: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:14:21.999 +01:00 WRN] : Failed to create demo user public: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:14:21.999 +01:00 WRN] : Failed to create demo user persona: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:14:22.001 +01:00 WRN] : Failed to create demo user twaa: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:14:22.001 +01:00 INF] : Initial data seeding completed successfully
+[2025-07-24 20:14:22.003 +01:00 INF] : Ewae API application started successfully
+[2025-07-24 20:14:22.058 +01:00 INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5139
+[2025-07-24 20:14:22.059 +01:00 INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+[2025-07-24 20:14:22.059 +01:00 INF] Microsoft.Hosting.Lifetime: Hosting environment: Development
+[2025-07-24 20:14:22.059 +01:00 INF] Microsoft.Hosting.Lifetime: Content root path: /home/yasser-zbook/Projects/Ewae/backend/iwaa
+[2025-07-24 20:14:24.327 +01:00 INF] Microsoft.Hosting.Lifetime: Application is shutting down...
+[2025-07-24 20:14:32.283 +01:00 INF] : Checking for pending database migrations...
+[2025-07-24 20:14:32.756 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:14:33.038 +01:00 INF] : Database migration completed successfully.
+[2025-07-24 20:14:33.265 +01:00 WRN] : Failed to create demo user agent: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:14:33.267 +01:00 WRN] : Failed to create demo user associative: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:14:33.268 +01:00 WRN] : Failed to create demo user public: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:14:33.269 +01:00 WRN] : Failed to create demo user persona: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:14:33.270 +01:00 WRN] : Failed to create demo user twaa: Passwords must have at least one uppercase ('A'-'Z').
+[2025-07-24 20:14:33.270 +01:00 INF] : Initial data seeding completed successfully
+[2025-07-24 20:14:33.272 +01:00 INF] : Ewae API application started successfully
+[2025-07-24 20:14:33.328 +01:00 INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5139
+[2025-07-24 20:14:33.330 +01:00 INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+[2025-07-24 20:14:33.330 +01:00 INF] Microsoft.Hosting.Lifetime: Hosting environment: Development
+[2025-07-24 20:14:33.330 +01:00 INF] Microsoft.Hosting.Lifetime: Content root path: /home/yasser-zbook/Projects/Ewae/backend/iwaa
+[2025-07-24 20:17:13.761 +01:00 INF] : Checking for pending database migrations...
+[2025-07-24 20:17:14.228 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:17:14.502 +01:00 INF] : Database migration completed successfully.
+[2025-07-24 20:17:15.015 +01:00 INF] : Created demo user: agent with role "AgentSecurite"
+[2025-07-24 20:17:15.088 +01:00 INF] : Created demo user: associative with role "GroupeAssociatif"
+[2025-07-24 20:17:15.160 +01:00 INF] : Created demo user: public with role "Public"
+[2025-07-24 20:17:15.224 +01:00 INF] : Created demo user: persona with role "GestionPersona"
+[2025-07-24 20:17:15.284 +01:00 INF] : Created demo user: twaa with role "Twaa"
+[2025-07-24 20:17:15.284 +01:00 INF] : Initial data seeding completed successfully
+[2025-07-24 20:17:15.285 +01:00 INF] : Ewae API application started successfully
+[2025-07-24 20:17:15.340 +01:00 INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5139
+[2025-07-24 20:17:15.341 +01:00 INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+[2025-07-24 20:17:15.341 +01:00 INF] Microsoft.Hosting.Lifetime: Hosting environment: Development
+[2025-07-24 20:17:15.341 +01:00 INF] Microsoft.Hosting.Lifetime: Content root path: /home/yasser-zbook/Projects/Ewae/backend/iwaa
+[2025-07-24 20:17:24.682 +01:00 INF] Microsoft.Hosting.Lifetime: Application is shutting down...
+[2025-07-24 20:17:35.771 +01:00 INF] : Checking for pending database migrations...
+[2025-07-24 20:17:36.246 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:17:36.535 +01:00 INF] : Database migration completed successfully.
+[2025-07-24 20:17:36.818 +01:00 INF] : Initial data seeding completed successfully
+[2025-07-24 20:17:36.820 +01:00 INF] : Ewae API application started successfully
+[2025-07-24 20:17:36.878 +01:00 INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5139
+[2025-07-24 20:17:36.880 +01:00 INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+[2025-07-24 20:17:36.881 +01:00 INF] Microsoft.Hosting.Lifetime: Hosting environment: Development
+[2025-07-24 20:17:36.881 +01:00 INF] Microsoft.Hosting.Lifetime: Content root path: /home/yasser-zbook/Projects/Ewae/backend/iwaa
+[2025-07-24 20:33:36.704 +01:00 INF] : Checking for pending database migrations...
+[2025-07-24 20:33:37.170 +01:00 WRN] Microsoft.EntityFrameworkCore.Model.Validation: Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+[2025-07-24 20:33:37.447 +01:00 INF] : Database migration completed successfully.
+[2025-07-24 20:33:37.730 +01:00 INF] : Initial data seeding completed successfully
+[2025-07-24 20:33:37.732 +01:00 INF] : Ewae API application started successfully
+[2025-07-24 20:33:37.787 +01:00 INF] Microsoft.Hosting.Lifetime: Now listening on: http://localhost:5139
+[2025-07-24 20:33:37.789 +01:00 INF] Microsoft.Hosting.Lifetime: Application started. Press Ctrl+C to shut down.
+[2025-07-24 20:33:37.790 +01:00 INF] Microsoft.Hosting.Lifetime: Hosting environment: Development
+[2025-07-24 20:33:37.790 +01:00 INF] Microsoft.Hosting.Lifetime: Content root path: /home/yasser-zbook/Projects/Ewae/backend/iwaa
