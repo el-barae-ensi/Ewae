@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\user\\Documents\\Ewae\\backend\\EwaeVH\\Ewae\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B82F29DA-969D-489A-A1C5-EA929A62CCB6}|AssociationService\\AssociationService.csproj|c:\\users\\user\\documents\\ewae\\backend\\ewaevh\\ewae\\associationservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B82F29DA-969D-489A-A1C5-EA929A62CCB6}|AssociationService\\AssociationService.csproj|solutionrelative:associationservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B2B3AFB-F962-43F1-A952-B437ED70E9F1}|HomelessService\\HomelessService.csproj|c:\\users\\user\\documents\\ewae\\backend\\ewaevh\\ewae\\homelessservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0B2B3AFB-F962-43F1-A952-B437ED70E9F1}|HomelessService\\HomelessService.csproj|solutionrelative:homelessservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CD42C89-12ED-4EE0-B433-09B7EE58510C}|LoginService\\LoginService.csproj|c:\\users\\user\\documents\\ewae\\backend\\ewaevh\\ewae\\loginservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CD42C89-12ED-4EE0-B433-09B7EE58510C}|LoginService\\LoginService.csproj|solutionrelative:loginservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Ewae\\backend\\EwaeVH\\Ewae\\AssociationService\\Program.cs",
+              "RelativeDocumentMoniker": "AssociationService\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\Ewae\\backend\\EwaeVH\\Ewae\\AssociationService\\Program.cs",
+              "RelativeToolTip": "AssociationService\\Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T11:08:00.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Ewae\\backend\\EwaeVH\\Ewae\\HomelessService\\Program.cs",
+              "RelativeDocumentMoniker": "HomelessService\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\Ewae\\backend\\EwaeVH\\Ewae\\HomelessService\\Program.cs",
+              "RelativeToolTip": "HomelessService\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T11:07:49.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Documents\\Ewae\\backend\\EwaeVH\\Ewae\\LoginService\\Program.cs",
+              "RelativeDocumentMoniker": "LoginService\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Documents\\Ewae\\backend\\EwaeVH\\Ewae\\LoginService\\Program.cs",
+              "RelativeToolTip": "LoginService\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T11:04:43.705Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

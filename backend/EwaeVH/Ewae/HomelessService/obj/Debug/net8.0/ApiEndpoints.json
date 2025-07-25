@@ -1,0 +1,81 @@
+[
+  {
+    "ContainingType": "HomelessService.Controller.HomelessController",
+    "Method": "GetAll",
+    "RelativePath": "api/Homeless",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomelessService.Controller.HomelessController",
+    "Method": "Create",
+    "RelativePath": "api/Homeless",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "homeless",
+        "Type": "HomelessService.Model.Homeless",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomelessService.Controller.HomelessController",
+    "Method": "GetById",
+    "RelativePath": "api/Homeless/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomelessService.Controller.HomelessController",
+    "Method": "Update",
+    "RelativePath": "api/Homeless/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "homeless",
+        "Type": "HomelessService.Model.Homeless",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HomelessService.Controller.HomelessController",
+    "Method": "Delete",
+    "RelativePath": "api/Homeless/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

@@ -1,0 +1,81 @@
+[
+  {
+    "ContainingType": "PartnerService.Controller.PartnersController",
+    "Method": "GetAll",
+    "RelativePath": "api/Partners",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PartnerService.Controller.PartnersController",
+    "Method": "Create",
+    "RelativePath": "api/Partners",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "partner",
+        "Type": "PartnerService.Model.Partner",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PartnerService.Controller.PartnersController",
+    "Method": "GetById",
+    "RelativePath": "api/Partners/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PartnerService.Controller.PartnersController",
+    "Method": "Update",
+    "RelativePath": "api/Partners/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "partner",
+        "Type": "PartnerService.Model.Partner",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PartnerService.Controller.PartnersController",
+    "Method": "Delete",
+    "RelativePath": "api/Partners/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

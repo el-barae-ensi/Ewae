@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Akev1P9WJhXllmno45BRCDJuYkYtMpuNBydoX4xoGzE=",
+  "Source": "PartnerService",
+  "BasePath": "_content/PartnerService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

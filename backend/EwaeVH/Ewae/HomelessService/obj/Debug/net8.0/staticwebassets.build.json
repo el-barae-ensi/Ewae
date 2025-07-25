@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "GIkyCuM7rgVTlI1gLYAaZ07cICdod0WvAlfKmRmXJb8=",
+  "Source": "HomelessService",
+  "BasePath": "_content/HomelessService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

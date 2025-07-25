@@ -1,0 +1,24 @@
+{
+  "Version": 1,
+  "Hash": "AvcJAS7u7wU1I/AsojeEE2txMoaHNAsZshXzAimb0EA=",
+  "Source": "AssociationService",
+  "BasePath": "_content/AssociationService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\user\\Documents\\Ewae\\backend\\EwaeVH\\Ewae\\LoginService\\LoginService.csproj",
+      "Version": 2,
+      "Source": "LoginService",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
