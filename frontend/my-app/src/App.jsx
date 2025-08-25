@@ -137,7 +137,6 @@ function App() {
         <AppRoutes />
       </BrowserRouter>
     </AuthProvider>
->>>>>>> Stashed changes
   );
 }
 
